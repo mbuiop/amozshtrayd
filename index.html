@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سایت آموزشی فیوچرز</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #ffffff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            color: #333;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .header h1 {
+            font-size: 24px;
+            color: #222;
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            font-size: 16px;
+            color: #666;
+            max-width: 500px;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 500px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .btn {
+            background-color: #000000;
+            color: #ffffff;
+            padding: 18px;
+            font-size: 18px;
+            border-radius: 10px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: 2px solid #000;
+            font-weight: 600;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn:hover {
+            background-color: #333;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+        
+        .btn:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .footer {
+            margin-top: 30px;
+            text-align: center;
+            color: #777;
+            font-size: 14px;
+            padding: 15px;
+        }
+        
+        /* انیمیشن برای دکمه‌ها */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .btn {
+            animation: fadeIn 0.6s ease forwards;
+            opacity: 0;
+        }
+        
+        .btn:nth-child(1) { animation-delay: 0.1s; }
+        .btn:nth-child(2) { animation-delay: 0.2s; }
+        .btn:nth-child(3) { animation-delay: 0.3s; }
+        .btn:nth-child(4) { animation-delay: 0.4s; }
+        .btn:nth-child(5) { animation-delay: 0.5s; }
+        
+        /* مسیر مخفی */
+        .hidden-path {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 1px;
+            height: 1px;
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>آموزش فیوچرز و بازارهای مالی</h1>
+        <p>منابع آموزشی برای معامله‌گران تازه‌کار و حرفه‌ای</p>
+    </div>
+    
+    <div class="container">
+        <a href="m.html" class="btn">راهنمایی فیوچرز برا تازه کار ها</a>
+        <a href="b.html" class="btn">اندیکاتور های مهم برا فیوچرز</a>
+        <a href="n.html" class="btn">ثبت نام کن و کسب درامد کن</a>
+        <a href="s.html" class="btn">دریافت سیگنال فیوچرز رایگان</a>
+        <a href="w.html" class="btn">ارتباط با پشتیبانی</a>
+    </div>
+    
+    <!-- مسیر مخفی بدون دکمه -->
+    <div class="hidden-path">
+        <a href="MD.html">مسیر مخفی</a>
+    </div>
+    
+    <div class="footer">
+        تمامی حقوق این سایت محفوظ است © ۱۴۰۲
+    </div>
+</body>
+</html>
