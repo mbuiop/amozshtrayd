@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>توضیح جامع اندیکاتورهای تحلیل تکنیکال</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --light-bg: #f8f9fa;
+            --dark-bg: #1a252f;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f0f5ff;
+            color: #333;
+            padding-top: 20px;
+            line-height: 1.8;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-weight: 700;
+            margin-bottom: 15px;
+            font-size: 2.5rem;
+        }
+        
+        .header p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+        
+        .indicator-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .indicator-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.15);
+        }
+        
+        .indicator-header {
+            background: var(--secondary-color);
+            color: white;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .indicator-header i {
+            font-size: 2rem;
+            margin-left: 15px;
+        }
+        
+        .indicator-header h3 {
+            margin: 0;
+            font-weight: 700;
+        }
+        
+        .indicator-body {
+            padding: 25px;
+        }
+        
+        .indicator-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(0,0,0,0.05);
+        }
+        
+        .indicator-table th {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+        
+        .indicator-table td {
+            padding: 15px;
+            border: 1px solid #e0e0e0;
+            text-align: center;
+        }
+        
+        .indicator-table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        
+        .explanation-box {
+            background-color: var(--light-bg);
+            border-left: 4px solid var(--secondary-color);
+            padding: 20px;
+            border-radius: 0 10px 10px 0;
+            margin: 25px 0;
+        }
+        
+        .formula-box {
+            background-color: #e3f2fd;
+            padding: 20px;
+            border-radius: 10px;
+            font-family: monospace;
+            font-size: 1.1rem;
+            margin: 20px 0;
+            border-left: 4px solid var(--secondary-color);
+        }
+        
+        .key-points {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .key-point {
+            flex: 1 1 300px;
+            background: white;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+            border-top: 3px solid var(--secondary-color);
+        }
+        
+        .key-point h5 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+        
+        .footer {
+            background: var(--dark-bg);
+            color: white;
+            text-align: center;
+            padding: 30px;
+            border-radius: 15px;
+            margin-top: 40px;
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .indicator-header {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .indicator-header i {
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1><i class="fas fa-chart-line"></i> آموزش جامع اندیکاتورهای تحلیل تکنیکال</h1>
+            <p>بررسی دقیق ساختار، فرمول‌ها و کاربرد اندیکاتورهای مهم در تحلیل بازارهای مالی</p>
+        </div>
+        
+        <!-- RSI Indicator -->
+        <div class="indicator-card">
+            <div class="indicator-header">
+                <i class="fas fa-wave-square"></i>
+                <h3>شاخص قدرت نسبی (RSI)</h3>
+            </div>
+            <div class="indicator-body">
+                <div class="table-responsive">
+                    <table class="indicator-table">
+                        <thead>
+                            <tr>
+                                <th>مولفه</th>
+                                <th>نماد</th>
+                                <th>توضیحات</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>شاخص قدرت نسبی</td>
+                                <td>RSI</td>
+                                <td>خط اصلی که نوسانات بین 0 تا 100 را نشان می‌دهد</td>
+                            </tr>
+                            <tr>
+                                <td>سطح اشباع فروش</td>
+                                <td>30</td>
+                                <td>سطحی که معمولاً نشان‌دهنده شرایط فروش بیش از حد است</td>
+                            </tr>
+                            <tr>
+                                <td>سطح اشباع خرید</td>
+                                <td>70</td>
+                                <td>سطحی که معمولاً نشان‌دهنده شرایط خرید بیش از حد است</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="explanation-box">
+                    <h4><i class="fas fa-calculator"></i> نحوه محاسبه RSI:</h4>
+                    <div class="formula-box">
+                        RSI = 100 - (100 / (1 + (میانگین سود / میانگین ضرر)))
+                    </div>
+                    <p>
+                        اندیکاتور RSI یک اسیلاتور مومنتوم است که سرعت و تغییر حرکات قیمت را اندازه‌گیری می‌کند. 
+                        این اندیکاتور بین 0 تا 100 نوسان می‌کند و معمولاً از بازه 14 روزه استفاده می‌شود. 
+                        زمانی که RSI به بالای 70 می‌رسد، نشان‌دهنده اشباع خرید (خرید بیش از حد) است و 
+                        زمانی که به زیر 30 می‌رسد، نشان‌دهنده اشباع فروش (فروش بیش از حد) است.
+                    </p>
+                </div>
+                
+                <div class="key-points">
+                    <div class="key-point">
+                        <h5><i class="fas fa-lightbulb"></i> کاربردهای RSI</h5>
+                        <ul>
+                            <li>تشخیص نقاط اشباع خرید و فروش</li>
+                            <li>شناسایی واگرایی‌های قیمتی</li>
+                            <li>تشخیص روند بازار</li>
+                            <li>تأیید سیگنال‌های خرید و فروش</li>
+                        </ul>
+                    </div>
+                    <div class="key-point">
+                        <h5><i class="fas fa-exclamation-triangle"></i> محدودیت‌های RSI</h5>
+                        <ul>
+                            <li>در بازارهای روند قوی ممکن است سیگنال‌های کاذب ایجاد کند</li>
+                            <li>در بازه‌های زمانی کوتاه‌مدت نویز بیشتری دارد</li>
+                            <li>به تنهایی نباید مبنای تصمیم‌گیری قرار گیرد</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- MACD Indicator -->
+        <div class="indicator-card">
+            <div class="indicator-header">
+                <i class="fas fa-exchange-alt"></i>
+                <h3>همگرایی-واگرایی میانگین متحرک (MACD)</h3>
+            </div>
+            <div class="indicator-body">
+                <div class="table-responsive">
+                    <table class="indicator-table">
+                        <thead>
+                            <tr>
+                                <th>مولفه</th>
+                                <th>نماد</th>
+                                <th>توضیحات</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>خط MACD</td>
+                                <td>MACD</td>
+                                <td>تفاوت بین EMA کوتاه‌مدت و بلندمدت (معمولاً 12 و 26 روزه)</td>
+                            </tr>
+                            <tr>
+                                <td>خط سیگنال</td>
+                                <td>Signal</td>
+                                <td>میانگین متحرک خط MACD (معمولاً 9 روزه)</td>
+                            </tr>
+                            <tr>
+                                <td>هیستوگرام</td>
+                                <td>Histogram</td>
+                                <td>تفاوت بین خط MACD و خط سیگنال</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="explanation-box">
+                    <h4><i class="fas fa-calculator"></i> نحوه محاسبه MACD:</h4>
+                    <div class="formula-box">
+                        MACD = EMA(12) - EMA(26)<br>
+                        Signal = EMA(9) of MACD<br>
+                        Histogram = MACD - Signal
+                    </div>
+                    <p>
+                        MACD یک اندیکاتور دنبال‌کننده روند است که رابطه بین دو میانگین متحرک نمایی (EMA) را نشان می‌دهد. 
+                        این اندیکاتور از سه بخش تشکیل شده: خط MACD (خط سریع)، خط سیگنال (خط کند) و هیستوگرام که تفاوت بین این دو را نشان می‌دهد. 
+                        زمانی که خط MACD از خط سیگنال به سمت بالا عبور می‌کند، سیگنال خرید و زمانی که به سمت پایین عبور می‌کند، سیگنال فروش صادر می‌شود.
+                    </p>
+                </div>
+                
+                <div class="key-points">
+                    <div class="key-point">
+                        <h5><i class="fas fa-lightbulb"></i> سیگنال‌های MACD</h5>
+                        <ul>
+                            <li>تقاطع خط MACD و خط سیگنال</li>
+                            <li>واگرایی بین MACD و قیمت</li>
+                            <li>عبور از خط صفر (تغییر روند)</li>
+                            <li>حرکات هیستوگرام (افزایش/کاهش مومنتوم)</li>
+                        </ul>
+                    </div>
+                    <div class="key-point">
+                        <h5><i class="fas fa-exclamation-triangle"></i> نکات کاربردی</h5>
+                        <ul>
+                            <li>در بازارهای رونددار عملکرد بهتری دارد</li>
+                            <li>واگرایی‌ها سیگنال‌های قوی‌تری هستند</li>
+                            <li>ترکیب با RSI نتایج بهتری می‌دهد</li>
+                            <li>پریودهای استاندارد: 12, 26, 9</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- EMA Indicator -->
+        <div class="indicator-card">
+            <div class="indicator-header">
+                <i class="fas fa-chart-area"></i>
+                <h3>میانگین متحرک نمایی (EMA)</h3>
+            </div>
+            <div class="indicator-body">
+                <div class="table-responsive">
+                    <table class="indicator-table">
+                        <thead>
+                            <tr>
+                                <th>مولفه</th>
+                                <th>نماد</th>
+                                <th>توضیحات</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>میانگین متحرک نمایی</td>
+                                <td>EMA</td>
+                                <td>میانگین وزنی قیمت‌ها با تأکید بیشتر بر داده‌های اخیر</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="explanation-box">
+                    <h4><i class="fas fa-calculator"></i> نحوه محاسبه EMA:</h4>
+                    <div class="formula-box">
+                        EMA(امروز) = [قیمت(امروز) × (ضریب هموارسازی)] + [EMA(دیروز) × (1 - ضریب هموارسازی)]<br>
+                        ضریب هموارسازی = 2 ÷ (دوره + 1)
+                    </div>
+                    <p>
+                        میانگین متحرک نمایی (EMA) نوعی میانگین متحرک است که وزن بیشتری به داده‌های قیمتی اخیر می‌دهد. 
+                        این ویژگی باعث می‌شود EMA نسبت به تغییرات اخیر قیمت حساستر باشد و سریع‌تر به تغییرات قیمت واکنش نشان دهد. 
+                        EMA در مقایسه با میانگین متحرک ساده (SMA) تأخیر کمتری دارد و برای معامله‌گران کوتاه‌مدت مناسب‌تر است.
+                    </p>
+                </div>
+                
+                <div class="key-points">
+                    <div class="key-point">
+                        <h5><i class="fas fa-lightbulb"></i> کاربردهای EMA</h5>
+                        <ul>
+                            <li>شناسایی جهت روند بازار</li>
+                            <li>تعیین سطوح حمایت و مقاومت پویا</li>
+                            <li>سیستم‌های تقاطع (کراس‌اوور)</li>
+                            <li>فیلتر نویز بازار</li>
+                        </ul>
+                    </div>
+                    <div class="key-point">
+                        <h5><i class="fas fa-exclamation-triangle"></i> نکات کاربردی</h5>
+                        <ul>
+                            <li>پریودهای کوتاه‌مدت: 9, 12, 26 روزه</li>
+                            <li>پریودهای بلندمدت: 50, 100, 200 روزه</li>
+                            <li>کراس EMA کوتاه‌مدت و بلندمدت سیگنال روند</li>
+                            <li>شیب EMA نشان‌دهنده قدرت روند</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- KDJ Indicator -->
+        <div class="indicator-card">
+            <div class="indicator-header">
+                <i class="fas fa-sliders-h"></i>
+                <h3>اندیکاتور KDJ</h3>
+            </div>
+            <div class="indicator-body">
+                <div class="table-responsive">
+                    <table class="indicator-table">
+                        <thead>
+                            <tr>
+                                <th>مولفه</th>
+                                <th>نماد</th>
+                                <th>توضیحات</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>خط K</td>
+                                <td>%K</td>
+                                <td>خط سریع که حساسیت بیشتری به تغییرات قیمت دارد</td>
+                            </tr>
+                            <tr>
+                                <td>خط D</td>
+                                <td>%D</td>
+                                <td>خط کند که میانگین متحرک خط K است</td>
+                            </tr>
+                            <tr>
+                                <td>خط J</td>
+                                <td>%J</td>
+                                <td>خطی که نوسانات شدیدتر را نشان می‌دهد</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="explanation-box">
+                    <h4><i class="fas fa-calculator"></i> نحوه محاسبه KDJ:</h4>
+                    <div class="formula-box">
+                        RSV = [(قیمت بسته شدن - پایین‌ترین کف) / (بالاترین سقف - پایین‌ترین کف)] × 100<br>
+                        %K = میانگین متحرک 3 دوره‌ای از RSV<br>
+                        %D = میانگین متحرک 3 دوره‌ای از %K<br>
+                        %J = (3 × %K) - (2 × %D)
+                    </div>
+                    <p>
+                        اندیکاتور KDJ که به اسیلاتور استوکاستیک نیز معروف است، سرعت و قدرت روند قیمت را اندازه‌گیری می‌کند. 
+                        این اندیکاتور از سه خط تشکیل شده: خط K (خط اصلی)، خط D (میانگین خط K) و خط J (خطی که نوسانات شدید را نشان می‌دهد). 
+                        KDJ بین 0 تا 100 نوسان می‌کند و سطوح 20 و 80 به ترتیب نشان‌دهنده مناطق اشباع فروش و اشباع خرید هستند.
+                    </p>
+                </div>
+                
+                <div class="key-points">
+                    <div class="key-point">
+                        <h5><i class="fas fa-lightbulb"></i> سیگنال‌های KDJ</h5>
+                        <ul>
+                            <li>تقاطع خط K و خط D</li>
+                            <li>خروج از مناطق اشباع خرید/فروش</li>
+                            <li>واگرایی با نمودار قیمت</li>
+                            <li>حرکت خط J به بالای 100 یا زیر 0 (سیگنال قوی)</li>
+                        </ul>
+                    </div>
+                    <div class="key-point">
+                        <h5><i class="fas fa-exclamation-triangle"></i> نکات کاربردی</h5>
+                        <ul>
+                            <li>در بازارهای رنج بهترین عملکرد را دارد</li>
+                            <li>ترکیب با میانگین‌های متحرک توصیه می‌شود</li>
+                            <li>پریود استاندارد: 9, 3, 3</li>
+                            <li>خط J تأییدکننده سیگنال‌های خطوط K و D است</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Bollinger Bands Indicator -->
+        <div class="indicator-card">
+            <div class="indicator-header">
+                <i class="fas fa-compress-alt"></i>
+                <h3>باندهای بولینگر (Bollinger Bands)</h3>
+            </div>
+            <div class="indicator-body">
+                <div class="table-responsive">
+                    <table class="indicator-table">
+                        <thead>
+                            <tr>
+                                <th>مولفه</th>
+                                <th>نماد</th>
+                                <th>توضیحات</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>باند میانی</td>
+                                <td>Middle Band</td>
+                                <td>میانگین متحرک ساده (معمولاً 20 روزه)</td>
+                            </tr>
+                            <tr>
+                                <td>باند بالایی</td>
+                                <td>Upper Band</td>
+                                <td>باند میانی + (2 × انحراف معیار)</td>
+                            </tr>
+                            <tr>
+                                <td>باند پایینی</td>
+                                <td>Lower Band</td>
+                                <td>باند میانی - (2 × انحراف معیار)</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="explanation-box">
+                    <h4><i class="fas fa-calculator"></i> نحوه محاسبه باندهای بولینگر:</h4>
+                    <div class="formula-box">
+                        باند میانی = SMA(20)<br>
+                        باند بالایی = SMA(20) + (2 × انحراف معیار 20 روزه)<br>
+                        باند پایینی = SMA(20) - (2 × انحراف معیار 20 روزه)
+                    </div>
+                    <p>
+                        باندهای بولینگر یک ابزار تحلیل نوسانات است که از سه خط تشکیل شده: 
+                        یک میانگین متحرک ساده در وسط (باند میانی) و دو باند بیرونی که انحراف معیار قیمت از میانگین را نشان می‌دهند. 
+                        این باندها با تغییر نوسانات بازار منبسط و منقبض می‌شوند. 
+                        زمانی که قیمت به باندهای بیرونی نزدیک می‌شود، ممکن است نشان‌دهنده شرایط اشباع خرید یا فروش باشد.
+                    </p>
+                </div>
+                
+                <div class="key-points">
+                    <div class="key-point">
+                        <h5><i class="fas fa-lightbulb"></i> سیگنال‌های باندهای بولینگر</h5>
+                        <ul>
+                            <li>انقباض باندها (فشردگی) قبل از شکست قیمت</li>
+                            <li>تماس قیمت با باندهای بیرونی (اشباع خرید/فروش)</li>
+                            <li>شکست قیمت از باندها (ادامه روند)</li>
+                            <li>حرکت قیمت به سمت باند میانی (بازگشت احتمالی)</li>
+                        </ul>
+                    </div>
+                    <div class="key-point">
+                        <h5><i class="fas fa-exclamation-triangle"></i> نکات کاربردی</h5>
+                        <ul>
+                            <li>در بازارهای رنج بهترین عملکرد را دارد</li>
+                            <li>فشردگی باندها نشان‌دهنده نوسان کم و آماده‌باش برای حرکت بزرگ</li>
+                            <li>باندها سطوح حمایت و مقاومت پویا ایجاد می‌کنند</li>
+                            <li>ترکیب با RSI یا MACD نتایج بهتری می‌دهد</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <h4><i class="fas fa-graduation-cap"></i> نکات پایانی در استفاده از اندیکاتورها</h4>
+            <p>هیچ اندیکاتوری به تنهایی کامل نیست. همیشه اندیکاتورها را با تحلیل قیمت و حجم معاملات ترکیب کنید.</p>
+            <p>برای تأیید سیگنال‌ها از چند اندیکاتور مکمل استفاده نمایید (مثلاً RSI با MACD یا باندهای بولینگر با KDJ).</p>
+            <p class="mt-3">© 2023 آموزش تحلیل تکنیکال | طراحی شده با <i class="fas fa-heart" style="color: #e74c3c;"></i></p>
+        </div>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+                  </html>
